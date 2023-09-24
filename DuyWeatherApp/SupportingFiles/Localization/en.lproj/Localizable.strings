@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  DuyWeatherApp
+
+  Created by Duy Le on 24/09/2023.
+  
+*/
+"app_name" = "Weather";
+"loading_failed_error" = "Unable to load weather data at the moment. Please check your internet connection and try again later.";
