@@ -8,8 +8,8 @@
 import Foundation
 
 struct OpenWeatherAPI {
-    // MARK: To make sure the project is runnable, I put my API Key here, while it should be stored in a more secure place.
-    static let apiKey: String = "53ab69037642e922c8e038b69d0c5d69"
+    // MARK: Register OpenWeatherAPI and put your key here, in real project, the APIKey is store in a more secure place
+    static let apiKey: String = "YOUR_API_KEY_HERE"
     
     static let baseEndpoint: String = "https://api.openweathermap.org/data/2.5/weather"
     
