@@ -9,8 +9,9 @@ import Foundation
 import Combine
 
 final class HomeViewModel: ObservableObject {
-    @Published var cities: [City] = []
+    @Published var allCities: [City] = []
     @Published var message: String?
+    private var specificCityNames: [String] = ["Oslo", "Stockholm", "Mountain View", "London", "New York", "Berlin"]
     
     private let homeService: HomeServiceProtocol
     
@@ -41,22 +42,19 @@ final class HomeViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] city in
-                self?.cities.append(city)
+                self?.allCities.append(city)
             }
             .store(in: &cancellables)
     }
     
     private func getSpecificCities() {
-        getCity(name: "Gothenburg")
-        getCity(name: "Stockholm")
-        getCity(name: "Mountain View")
-        getCity(name: "London")
-        getCity(name: "New York")
-        getCity(name: "Berlin")
+        for city in specificCityNames {
+            getCity(name: city)
+        }
     }
     
     func refreshCities() {
-        cities.removeAll()
+        allCities.removeAll()
         getSpecificCities()
     }
 }

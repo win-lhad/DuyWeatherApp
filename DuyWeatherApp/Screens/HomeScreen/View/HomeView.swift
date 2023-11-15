@@ -13,6 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
+            // TODO: Handle code if there is an error of one city, only display the error
             List {
                 if let message = viewModel.message {
                     Text(message)
